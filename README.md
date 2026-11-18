@@ -164,14 +164,14 @@ Sustituyendo los valores comerciales de cada condición:
 
 <img width="555" height="115" alt="image" src="https://github.com/user-attachments/assets/200c46db-778e-4861-a37e-5787523759f3" />
 
-  Gcontrol(s) = {0.1 s + 100\,000}/{10^{-4} s^2 + 100.1 s + 101,000}
+  
   
 
 * **Sistema Caso:**
 
 <img width="467" height="108" alt="image" src="https://github.com/user-attachments/assets/8578efbb-21f1-41a4-bb02-7cb7e99db2fa" />
 
-  Gcaso(s) = {0.1 s + 1000}/{0.1 s^2 + 1000.1 s + 2000}
+  
   
 
 [Volver al contenido](#contenido)
