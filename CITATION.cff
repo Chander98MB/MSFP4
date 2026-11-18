@@ -1,0 +1,28 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: 'Practica 4, Modelado y Control del Sistema Fisiologico'
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Zaid Alexander
+    family-names: Arredondo Medina
+    email: L23212180@TECTIJUANA.EDU.MX
+    affiliation: TecNM/IT Tijuana
+repository-code: 'https://github.com/Chander98MB/MSFP4'
+keywords:
+  - circuito RLC de segundo orden
+  - eje endócrino
+  - controlador PID
+  - amplificadores operacionales
+  - MATLAB
+  - Simulink
+  - Simscape Electrical
+  - Python
+  - instrumentación electrónica
+license: BSD-2-Clause
+version: '1.0'
+date-released: '2026-11-17'
