@@ -146,11 +146,7 @@ Aplicando las leyes de Kirchhoff en el nodo de salida y considerando las relacio
 
 <img width="573" height="225" alt="image" src="https://github.com/user-attachments/assets/5f2f9e07-2ba5-4ae6-8bd0-4f4a687a4e70" />
 
-Fe(t) = {Ve(t) - Vs(t)}/R1 = {{CdVs(t)}/dt} + Fs(t),
 
-
-
-Vs(t) = L{{dFs(t)}{dt}} + R2 Fs(t).
 
 
 ### 2. Función de transferencia
@@ -159,18 +155,22 @@ Aplicando la transformada de Laplace con condiciones iniciales nulas y resolvien
 
 <img width="728" height="93" alt="image" src="https://github.com/user-attachments/assets/8b19cd6e-ac63-4bbd-a171-c6ef433d3dbc" />
 
-G(s) = {Vs(s)}/{Ve(s)} = {L s + R2}/{R1 L C s^2 + (L + R1 R2 C)s + (R1 + R2)}
+
 
 
 Sustituyendo los valores comerciales de cada condición:
 
 * **Sistema Control:**
-  
+
+<img width="555" height="115" alt="image" src="https://github.com/user-attachments/assets/200c46db-778e-4861-a37e-5787523759f3" />
+
   Gcontrol(s) = {0.1 s + 100\,000}/{10^{-4} s^2 + 100.1 s + 101,000}
   
 
 * **Sistema Caso:**
-  
+
+<img width="467" height="108" alt="image" src="https://github.com/user-attachments/assets/8578efbb-21f1-41a4-bb02-7cb7e99db2fa" />
+
   Gcaso(s) = {0.1 s + 1000}/{0.1 s^2 + 1000.1 s + 2000}
   
 
