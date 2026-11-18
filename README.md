@@ -73,15 +73,15 @@ Reproducir, controlar y validar experimentalmente el modelo fenomenológico de s
 ### Objetivos específicos
 
 - Interpretar los procesos fisiológicos del eje endócrino para proponer la topología del circuito eléctrico equivalente de segundo orden.
-- Establecer las correspondencias entre las variables hormonales y los elementos eléctricos ($V_e(t), F_e(t), R_1, C, L, R_2, F_s(t), V_s(t)$).
+- Establecer las correspondencias entre las variables hormonales y los elementos eléctricos (Ve(t), F_e(t), R1, C, L, R2, Fs(t), Vs(t)).
 - Formular las ecuaciones integro-diferenciales mediante leyes de Kirchhoff y deducir la función de transferencia del sistema.
-- Obtener de manera independiente las funciones de transferencia $G_{\mathrm{control}}(s)$ y $G_{\mathrm{caso}}(s)$ utilizando los valores comerciales especificados.
+- Obtener de manera independiente las funciones de transferencia Gcontrol(s) y Gcaso(s) utilizando los valores comerciales especificados.
 - Determinar analíticamente el error en estado estacionario ante una entrada escalón unitario y analizar la estabilidad mediante los polos de la planta.
 - Simular el modelo en Simulink mediante ecuaciones integro-diferenciales, función de transferencia y componentes de Simscape Electrical.
-- Comparar las respuestas temporales en lazo abierto entre el individuo sano (*control*) y la condición alterada (*caso*).
-- Diseñar un sistema de control en lazo cerrado e implementar las ganancias del bloque PID sintonizadas con *PID Tuner*.
+- Comparar las respuestas temporales en lazo abierto entre el individuo sano (*control*) y la condición alterada (caso).
+- Diseñar un sistema de control en lazo cerrado e implementar las ganancias del bloque PID sintonizadas con PID Tuner.
 - Reproducir las respuestas de lazo abierto y lazo cerrado mediante MATLAB y Python bajo las mismas condiciones.
-- Calcular los componentes comerciales ($R_e, R_r, C_e, C_r$) requeridos para construir el controlador PID analógico con amplificadores operacionales.
+- Calcular los componentes comerciales (Re, Rr, Ce, Cr) requeridos para construir el controlador PID analógico con amplificadores operacionales.
 - Construir y evaluar los circuitos equivalentes y el controlador analógico en el Laboratorio de Electrónica utilizando generador de funciones y osciloscopio.
 - Documentar los resultados numéricos, gráficos y experimentales en un repositorio de GitHub.
 
@@ -109,29 +109,29 @@ El enfoque combina **Ingeniería de Control, Electrónica Analógica, Ciencias d
 <a id="analogia"></a>
 ## Modelo físico y analogía eléctrica
 
-El sistema endócrino se aproxima mediante un modelo fenomenológico de segundo orden. La topología del circuito equivalente presenta una rama principal con la fuente de voltaje $V_e(t)$ y el resistor $R_1$. En el nodo posterior a $R_1$ se conecta un capacitor $C$ hacia la referencia, en paralelo con una rama en serie constituida por el inductor $L$ y el resistor $R_2$. La salida $V_s(t)$ se mide en el nodo de unión entre $R_1$, $C$ y $L$.
+El sistema endócrino se aproxima mediante un modelo fenomenológico de segundo orden. La topología del circuito equivalente presenta una rama principal con la fuente de voltaje Ve(t) y el resistor R1. En el nodo posterior a R1 se conecta un capacitor C hacia la referencia, en paralelo con una rama en serie constituida por el inductor L y el resistor R2. La salida Vs(t) se mide en el nodo de unión entre R1, C y L.
 
 | Símbolo | Equivalente eléctrico | Interpretación fisiológica |
 |---|---|---|
-| $V_e(t)$ | Voltaje de entrada | Estímulo para la secreción hormonal |
-| $F_e(t)$ | Corriente de entrada | Flujo de secreción y transporte hormonal |
-| $R_1$ | Resistencia | Pérdidas y oposición durante el transporte |
-| $C$ | Capacitancia | Acumulación temporal de hormona en el compartimento |
-| $L$ | Inductancia | Retardo o inercia de la respuesta del tejido diana |
-| $R_2$ | Resistencia | Utilización, disipación o eliminación de la señal hormonal |
-| $F_s(t)$ | Corriente de salida | Flujo asociado con la respuesta del órgano diana |
-| $V_s(t)$ | Voltaje de salida | Nivel hormonal efectivo y normalizado |
+| Ve(t) | Voltaje de entrada | Estímulo para la secreción hormonal |
+| Fe(t) | Corriente de entrada | Flujo de secreción y transporte hormonal |
+| R1 | Resistencia | Pérdidas y oposición durante el transporte |
+| C | Capacitancia | Acumulación temporal de hormona en el compartimento |
+| L | Inductancia | Retardo o inercia de la respuesta del tejido diana |
+| R2 | Resistencia | Utilización, disipación o eliminación de la señal hormonal |
+| Fs(t) | Corriente de salida | Flujo asociado con la respuesta del órgano diana |
+| Vs(t) | Voltaje de salida | Nivel hormonal efectivo y normalizado |
 
 ### Parámetros comerciales para la experimentación
 
 | Componente | Control (Referencia) | Caso (Condición alterada) | Unidad eléctrica |
 |---|---:|---:|---|
-| $R_1$ | $1$ | $1$ | $\mathrm{k}\Omega$ |
-| $L$ | $100$ | $100$ | $\mathrm{mH}$ |
-| $C$ | $1$ | $1000$ | $\mu\mathrm{F}$ |
-| $R_2$ | $100$ | $1$ | $\mathrm{k}\Omega$ |
+| R1 | 1 | 1 | kohms |
+| L | 100 | 100 | mH |
+| C | 1 | 1000 | mF |
+| R2 | 100 | 1 | kohms |
 
-La modificación simultánea de $C$ y $R_2$ altera drásticamente el amortiguamiento y la velocidad de respuesta del sistema entre ambas condiciones.
+La modificación simultánea de C y R2 altera drásticamente el amortiguamiento y la velocidad de respuesta del sistema entre ambas condiciones.
 
 [Volver al contenido](#contenido)
 
@@ -144,33 +144,33 @@ La modificación simultánea de $C$ y $R_2$ altera drásticamente el amortiguami
 
 Aplicando las leyes de Kirchhoff en el nodo de salida y considerando las relaciones constitutivas de los elementos reactivos:
 
-$$
-F_e(t) = \frac{V_e(t) - V_s(t)}{R_1} = C\frac{dV_s(t)}{dt} + F_s(t),
-$$
 
-$$
-V_s(t) = L\frac{dF_s(t)}{dt} + R_2 F_s(t).
-$$
+Fe(t) = {Ve(t) - Vs(t)}/R1 = {{CdVs(t)}/dt} + Fs(t),
+
+
+
+Vs(t) = L{{dFs(t)}{dt}} + R2 Fs(t).
+
 
 ### 2. Función de transferencia
 
 Aplicando la transformada de Laplace con condiciones iniciales nulas y resolviendo algebraicamente:
 
-$$
-\boxed{G(s) = \frac{V_s(s)}{V_e(s)} = \frac{L s + R_2}{R_1 L C s^2 + (L + R_1 R_2 C)s + (R_1 + R_2)}}
-$$
+
+G(s) = {Vs(s)}/{Ve(s)} = {L s + R2}/{R1 L C s^2 + (L + R1 R2 C)s + (R1 + R2)}
+
 
 Sustituyendo los valores comerciales de cada condición:
 
 * **Sistema Control:**
-  $$
-  G_{\mathrm{control}}(s) = \frac{0.1 s + 100\,000}{10^{-4} s^2 + 100.1 s + 101\,000}
-  $$
+  
+  Gcontrol(s) = {0.1 s + 100\,000}/{10^{-4} s^2 + 100.1 s + 101,000}
+  
 
 * **Sistema Caso:**
-  $$
-  G_{\mathrm{caso}}(s) = \frac{0.1 s + 1000}{0.1 s^2 + 1000.1 s + 2000}
-  $$
+  
+  Gcaso(s) = {0.1 s + 1000}/{0.1 s^2 + 1000.1 s + 2000}
+  
 
 [Volver al contenido](#contenido)
 
@@ -181,10 +181,11 @@ Sustituyendo los valores comerciales de cada condición:
 
 ### 1. Error en estado estacionario
 
-Para una entrada de escalón unitario $V_e(s) = \frac{1}{s}$, el valor final se evalúa mediante el teorema del valor final:
+Para una entrada de escalón unitario Ve(s) = 1/s, el valor final se evalúa mediante el teorema del valor final:
 
-$$
-\lim_{t\to\infty} V_s(t) = \lim_{s\to 0} s \cdot \frac{1}{s} G(s) = G(0) = \frac{R_2}{R_1 + R_2}
+<img width="598" height="100" alt="image" src="https://github.com/user-attachments/assets/5dfa289c-7f62-4f50-bcc6-5462234e2eca" />
+
+lim{t\to\infty} V_s(t) = \lim_{s\to 0} s \cdot \frac{1}{s} G(s) = G(0) = \frac{R_2}{R_1 + R_2}
 $$
 
 El error en estado estacionario $e_{ss} = 1 - G(0)$ resulta:
