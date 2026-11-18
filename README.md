@@ -144,6 +144,7 @@ La modificación simultánea de C y R2 altera drásticamente el amortiguamiento 
 
 Aplicando las leyes de Kirchhoff en el nodo de salida y considerando las relaciones constitutivas de los elementos reactivos:
 
+<img width="573" height="225" alt="image" src="https://github.com/user-attachments/assets/5f2f9e07-2ba5-4ae6-8bd0-4f4a687a4e70" />
 
 Fe(t) = {Ve(t) - Vs(t)}/R1 = {{CdVs(t)}/dt} + Fs(t),
 
@@ -156,6 +157,7 @@ Vs(t) = L{{dFs(t)}{dt}} + R2 Fs(t).
 
 Aplicando la transformada de Laplace con condiciones iniciales nulas y resolviendo algebraicamente:
 
+<img width="728" height="93" alt="image" src="https://github.com/user-attachments/assets/8b19cd6e-ac63-4bbd-a171-c6ef433d3dbc" />
 
 G(s) = {Vs(s)}/{Ve(s)} = {L s + R2}/{R1 L C s^2 + (L + R1 R2 C)s + (R1 + R2)}
 
