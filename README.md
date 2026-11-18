@@ -185,8 +185,7 @@ Para una entrada de escalón unitario Ve(s) = 1/s, el valor final se evalúa med
 
 <img width="598" height="100" alt="image" src="https://github.com/user-attachments/assets/5dfa289c-7f62-4f50-bcc6-5462234e2eca" />
 
-lim{t\to\infty} V_s(t) = \lim_{s\to 0} s \cdot \frac{1}{s} G(s) = G(0) = \frac{R_2}{R_1 + R_2}
-$$
+
 
 El error en estado estacionario $e_{ss} = 1 - G(0)$ resulta:
 
