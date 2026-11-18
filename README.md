@@ -287,9 +287,10 @@ El programa `Arredondo23212240.py`, ejecutado en **Visual Studio Code**, verific
 <a id="biorender"></a>
 ## Biorender
 
-Para contextualizar la analogía eléctrica del sistema endocrino con la fisiología real, se desarrolló un diagrama esquemático interactivo mediante **BioRender**. Este diagrama vincula cada compartimento y parámetro del circuito eléctrico equivalente con los procesos biológicos de secreción, transporte hormonal en sangre, retardo tisular y utilización en los órganos diana.
+Para contextualizar la analogía eléctrica del sistema endocrino con la fisiología real, se desarrolló un diagrama esquemático interactivo mediante BioRender. Este diagrama vincula cada compartimento y parámetro del circuito eléctrico equivalente con los procesos biológicos de secreción, transporte hormonal en sangre, retardo tisular y utilización en los órganos diana.
 
-*Nota: Asegúrese de incluir el archivo de imagen correspondiente en su repositorio (por ejemplo, `biorender_endocrino.png`) para su correcta visualización.*
+<img width="1202" height="846" alt="image" src="https://github.com/user-attachments/assets/bb92f03c-6444-40b7-941a-7019b52e94d3" />
+
 
 [Volver al contenido](#contenido)
 
